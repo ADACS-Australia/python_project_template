@@ -1,0 +1,15 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Dependency directories
+dist/
+build/
+eggs/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+.installed.cfg
+*.egg-info/
+.build/
