@@ -13,3 +13,6 @@ develop-eggs/
 .installed.cfg
 *.egg-info/
 .build/
+
+# Docs
+html/

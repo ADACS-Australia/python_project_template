@@ -3,7 +3,7 @@ from numpy import radians
 
 
 def mollewide_plot(df):
-    """Plots the pulsars in a Mollewide projection and saves as a png called .
+    """Plots the pulsars in a Mollewide projection and saves as a png called pulsar_plot.png.
 
     Parameters
     ----------
