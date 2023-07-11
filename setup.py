@@ -35,6 +35,7 @@ setup(
         'console_scripts': [
             # Make a hello_world command that runs the main function in hello_world.py script located in my_package/scripts
             'hello_world=my_package.scripts.hello_world:main',
+            'filter_and_plot=my_package.scripts.filter_and_plot:main',
         ],
     },
 )
