@@ -90,7 +90,7 @@
 <span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Read the CSV file into a DataFrame</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;my_package/data/pulsars.csv&#39;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span>
 
     <span class="c1"># Add new columns to df</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RA (deg)&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">0</span>
