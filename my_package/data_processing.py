@@ -19,7 +19,7 @@ def input_data(csv_path=PULSAR_CSV_PATH):
         Pandas DataFrame containing the pulsar data with RA and Dec in degrees.
     """
     # Read the CSV file into a DataFrame
-    df = pd.read_csv('my_package/data/pulsars.csv')
+    df = pd.read_csv(csv_path)
 
     # Add new columns to df
     df['RA (deg)']  = 0
