@@ -5,8 +5,7 @@ from setuptools import setup
 
 # List of dependencies for the package
 # >= Can be used to specify a minimum version
-# >=,< Can be used to specify a minimum and maximum version
-# e.g. 'numpy>=1.15,<1.20',
+# >=,< Can be used to specify a minimum and maximum version e.g. 'numpy>=1.15,<1.20',
 dependencies = [
     'argparse>=1.4.0',
     'numpy>=1.15',
@@ -34,6 +33,7 @@ setup(
     # Scripts that will be run on the command line
     entry_points={
         'console_scripts': [
+            # Make a hello_world command that runs the main function in hello_world.py script located in my_package/scripts
             'hello_world=my_package.scripts.hello_world:main',
         ],
     },
