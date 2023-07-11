@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my_package.data_processing &mdash; my_project  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            my_project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../my_project_modules.html">my_package modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">my_project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">my_package.data_processing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for my_package.data_processing</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+
+<span class="kn">from</span> <span class="nn">my_package.load_data</span> <span class="kn">import</span> <span class="n">PULSAR_CSV_PATH</span>
+
+<div class="viewcode-block" id="input_data"><a class="viewcode-back" href="../../my_project_modules.html#my_package.data_processing.input_data">[docs]</a><span class="k">def</span> <span class="nf">input_data</span><span class="p">(</span><span class="n">csv_path</span><span class="o">=</span><span class="n">PULSAR_CSV_PATH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads the CSV file and returns a DataFrame with the RA and Dec converted to degrees.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    csv_path : str</span>
+<span class="sd">        Path to the CSV file containing the pulsar data.</span>
+<span class="sd">        If none provided will use the pulsar data included with the package.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Read the CSV file into a DataFrame</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;my_package/data/pulsars.csv&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Add new columns to df</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RA (deg)&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dec (deg)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Loop over dataframe and convert RA and Dec to degrees</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">ra_hms</span>  <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;RA (HMS)&#39;</span><span class="p">]</span>
+        <span class="n">dec_hms</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Dec (DMS)&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Create a SkyCoord object and specify the units</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">ra_hms</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="n">dec_hms</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+        <span class="c1"># Access the converted RA and Dec in degrees</span>
+        <span class="n">ra_deg</span>  <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span>
+        <span class="n">dec_deg</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span>
+
+        <span class="c1"># Update the DataFrame with the converted values</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;RA (deg)&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">ra_deg</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Dec (deg)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dec_deg</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="filter_by_name"><a class="viewcode-back" href="../../my_project_modules.html#my_package.data_processing.filter_by_name">[docs]</a><span class="k">def</span> <span class="nf">filter_by_name</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">source_names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filters the DataFrame by source name.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
+<span class="sd">    source_names : list of str</span>
+<span class="sd">        A list of source names to filter the DataFrame by.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
+<span class="sd">        Filtered by source name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Filter the DataFrame by source</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">source_names</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="filter_by_declination"><a class="viewcode-back" href="../../my_project_modules.html#my_package.data_processing.filter_by_declination">[docs]</a><span class="k">def</span> <span class="nf">filter_by_declination</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min_dec</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">max_dec</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filters the DataFrame by declination.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
+<span class="sd">    min_dec : float</span>
+<span class="sd">        Minimum declination to filter by.</span>
+<span class="sd">    max_dec : float</span>
+<span class="sd">        Maximum declination to filter by.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</span>
+<span class="sd">        Filtered by declination.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Filter the DataFrame by declination</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dec (deg)&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">min_dec</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dec (deg)&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">max_dec</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nick Swainston.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -44,7 +44,12 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_use.html">How to use</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">my_package modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-processing-functions">data_processing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-my_package.data_processing">data_processing functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#my_package.data_processing.filter_by_declination"><code class="docutils literal notranslate"><span class="pre">filter_by_declination()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#my_package.data_processing.filter_by_name"><code class="docutils literal notranslate"><span class="pre">filter_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#my_package.data_processing.input_data"><code class="docutils literal notranslate"><span class="pre">input_data()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-my_package.plotting">plotting functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#my_package.plotting.mollewide_plot"><code class="docutils literal notranslate"><span class="pre">mollewide_plot()</span></code></a></li>
 </ul>
@@ -79,8 +84,77 @@
              
   <section id="my-package-modules">
 <span id="modules"></span><h1>my_package modules<a class="headerlink" href="#my-package-modules" title="Permalink to this heading"></a></h1>
-<section id="data-processing-functions">
-<h2>data_processing functions<a class="headerlink" href="#data-processing-functions" title="Permalink to this heading"></a></h2>
+<section id="module-my_package.data_processing">
+<span id="data-processing-functions"></span><h2>data_processing functions<a class="headerlink" href="#module-my_package.data_processing" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="my_package.data_processing.filter_by_declination">
+<span class="sig-prename descclassname"><span class="pre">my_package.data_processing.</span></span><span class="sig-name descname"><span class="pre">filter_by_declination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/my_package/data_processing.html#filter_by_declination"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#my_package.data_processing.filter_by_declination" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the DataFrame by declination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</p>
+</dd>
+<dt><strong>min_dec</strong><span class="classifier">float</span></dt><dd><p>Minimum declination to filter by.</p>
+</dd>
+<dt><strong>max_dec</strong><span class="classifier">float</span></dt><dd><p>Maximum declination to filter by.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Pandas DataFrame containing the pulsar data with RA and Dec in degrees.
+Filtered by declination.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="my_package.data_processing.filter_by_name">
+<span class="sig-prename descclassname"><span class="pre">my_package.data_processing.</span></span><span class="sig-name descname"><span class="pre">filter_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/my_package/data_processing.html#filter_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#my_package.data_processing.filter_by_name" title="Permalink to this definition"></a></dt>
+<dd><p>Filters the DataFrame by source name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</p>
+</dd>
+<dt><strong>source_names</strong><span class="classifier">list of str</span></dt><dd><p>A list of source names to filter the DataFrame by.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Pandas DataFrame containing the pulsar data with RA and Dec in degrees.
+Filtered by source name.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="my_package.data_processing.input_data">
+<span class="sig-prename descclassname"><span class="pre">my_package.data_processing.</span></span><span class="sig-name descname"><span class="pre">input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/my_package/data/pulsars.csv'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/my_package/data_processing.html#input_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#my_package.data_processing.input_data" title="Permalink to this definition"></a></dt>
+<dd><p>Reads the CSV file and returns a DataFrame with the RA and Dec converted to degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>csv_path</strong><span class="classifier">str</span></dt><dd><p>Path to the CSV file containing the pulsar data.
+If none provided will use the pulsar data included with the package.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Pandas DataFrame containing the pulsar data with RA and Dec in degrees.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-my_package.plotting">
 <span id="plotting-functions"></span><h2>plotting functions<a class="headerlink" href="#module-my_package.plotting" title="Permalink to this heading"></a></h2>
