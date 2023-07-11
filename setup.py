@@ -11,6 +11,7 @@ dependencies = [
     'numpy>=1.15',
     'matplotlib>=2.1.0',
     'astropy>=2.0.2',
+    'pandas',
 ]
 
 setup(
