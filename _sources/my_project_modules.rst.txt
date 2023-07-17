@@ -18,3 +18,9 @@ plotting functions
 
 .. automodule:: my_package.plotting
     :members:
+
+my_file functions
+-----------------
+
+.. automodule:: my_package.my_file
+    :members:

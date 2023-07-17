@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my_package.my_file &mdash; my_project  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            my_project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_use.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../my_project_modules.html">my_package modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">my_project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">my_package.my_file</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for my_package.my_file</h1><div class="highlight"><pre>
+<span></span>
+
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="documentation_example"><a class="viewcode-back" href="../../my_project_modules.html#my_package.my_file.documentation_example">[docs]</a><span class="k">def</span> <span class="nf">documentation_example</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">long_var_name</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Summarize the function in one line.</span>
+
+<span class="sd">    Several sentences providing an extended description. Refer to</span>
+<span class="sd">    variables using back-ticks, e.g. `var`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    var1 : array_like</span>
+<span class="sd">        Array_like means all those objects -- lists, nested lists, etc. --</span>
+<span class="sd">        that can be converted to an array.  We can also refer to</span>
+<span class="sd">        variables like `var1`.</span>
+<span class="sd">    var2 : int</span>
+<span class="sd">        The type above can either refer to an actual Python type</span>
+<span class="sd">        (e.g. ``int``), or describe the type of the variable in more</span>
+<span class="sd">        detail, e.g. ``(N,) ndarray`` or ``array_like``.</span>
+<span class="sd">    *args : iterable</span>
+<span class="sd">        Other arguments.</span>
+<span class="sd">    long_var_name : {&#39;hi&#39;, &#39;ho&#39;}, optional</span>
+<span class="sd">        Choices in brackets, default first when optional.</span>
+<span class="sd">    **kwargs : dict</span>
+<span class="sd">        Keyword arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    type</span>
+<span class="sd">        Explanation of anonymous return value of type ``type``.</span>
+<span class="sd">    describe : type</span>
+<span class="sd">        Explanation of return value named `describe`.</span>
+<span class="sd">    out : type</span>
+<span class="sd">        Explanation of `out`.</span>
+<span class="sd">    type_without_description</span>
+
+<span class="sd">    Other Parameters</span>
+<span class="sd">    ----------------</span>
+<span class="sd">    only_seldom_used_keywords : type</span>
+<span class="sd">        Explanation.</span>
+<span class="sd">    common_parameters_listed_above : type</span>
+<span class="sd">        Explanation.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    BadException</span>
+<span class="sd">        Because you shouldn&#39;t have done that.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    numpy.array : Relationship (optional).</span>
+<span class="sd">    numpy.ndarray : Relationship (optional), which could be fairly long, in</span>
+<span class="sd">                    which case the line wraps here.</span>
+<span class="sd">    numpy.dot, numpy.linalg.norm, numpy.eye</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Notes about the implementation algorithm (if needed).</span>
+
+<span class="sd">    This can have multiple paragraphs.</span>
+
+<span class="sd">    You may include some math:</span>
+
+<span class="sd">    .. math:: X(e^{j\omega } ) = x(n)e^{ - j\omega n}</span>
+
+<span class="sd">    And even use a Greek symbol like :math:`\omega` inline.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Cite the relevant literature, e.g. [1]_.  You may also cite these</span>
+<span class="sd">    references in the notes section above.</span>
+
+<span class="sd">    .. [1] O. McNoleg, &quot;The integration of GIS, remote sensing,</span>
+<span class="sd">       expert systems and adaptive co-kriging for environmental habitat</span>
+<span class="sd">       modelling of the Highland Haggis using object-oriented, fuzzy-logic</span>
+<span class="sd">       and neural-network techniques,&quot; Computers &amp; Geosciences, vol. 22,</span>
+<span class="sd">       pp. 585-588, 1996.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    These are written in doctest format, and should illustrate how to</span>
+<span class="sd">    use the function.</span>
+
+<span class="sd">    &gt;&gt;&gt; a = [1, 2, 3]</span>
+<span class="sd">    &gt;&gt;&gt; print([x + 3 for x in a])</span>
+<span class="sd">    [4, 5, 6]</span>
+<span class="sd">    &gt;&gt;&gt; print(&quot;a\nb&quot;)</span>
+<span class="sd">    a</span>
+<span class="sd">    b</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># After closing class docstring, there should be one blank line to</span>
+    <span class="c1"># separate following codes (according to PEP257).</span>
+    <span class="c1"># But for function, method and module, there should be no blank lines</span>
+    <span class="c1"># after closing the docstring.</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nick Swainston.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
