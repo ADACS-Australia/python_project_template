@@ -69,7 +69,41 @@
            <div itemprop="articleBody">
              
   <h1>Source code for my_package.my_file</h1><div class="highlight"><pre>
-<span></span>
+<span></span><span class="sd">&quot;&quot;&quot;Docstring for the my_file.py module.</span>
+
+<span class="sd">Modules names should have short, all-lowercase names.  The module name may</span>
+<span class="sd">have underscores if this improves readability.</span>
+
+<span class="sd">Every module should have a docstring at the very top of the file.  The</span>
+<span class="sd">module&#39;s docstring may extend over multiple lines.  If your docstring does</span>
+<span class="sd">extend over multiple lines, the closing three quotation marks must be on</span>
+<span class="sd">a line by itself, preferably preceded by a blank line.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># standard library imports first</span>
+
+<span class="c1"># Do NOT import using *, e.g. from numpy import *</span>
+<span class="c1">#</span>
+<span class="c1"># Import the module using</span>
+<span class="c1">#</span>
+<span class="c1">#   import numpy</span>
+<span class="c1">#</span>
+<span class="c1"># instead or import individual functions as needed, e.g</span>
+<span class="c1">#</span>
+<span class="c1">#  from numpy import array, zeros</span>
+<span class="c1">#</span>
+<span class="c1"># If you prefer the use of abbreviated module names, we suggest the</span>
+<span class="c1"># convention used by NumPy itself::</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># These abbreviated names are not to be used in docstrings; users must</span>
+<span class="c1"># be able to paste and execute docstrings after importing only the</span>
+<span class="c1"># numpy module itself, unabbreviated.</span>
 
 
 <span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
