@@ -1,4 +1,38 @@
+"""Docstring for the my_file.py module.
 
+Modules names should have short, all-lowercase names.  The module name may
+have underscores if this improves readability.
+
+Every module should have a docstring at the very top of the file.  The
+module's docstring may extend over multiple lines.  If your docstring does
+extend over multiple lines, the closing three quotation marks must be on
+a line by itself, preferably preceded by a blank line.
+
+"""
+from __future__ import division, absolute_import, print_function
+
+import os  # standard library imports first
+
+# Do NOT import using *, e.g. from numpy import *
+#
+# Import the module using
+#
+#   import numpy
+#
+# instead or import individual functions as needed, e.g
+#
+#  from numpy import array, zeros
+#
+# If you prefer the use of abbreviated module names, we suggest the
+# convention used by NumPy itself::
+
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+# These abbreviated names are not to be used in docstrings; users must
+# be able to paste and execute docstrings after importing only the
+# numpy module itself, unabbreviated.
 
 
 def my_function():
