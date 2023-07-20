@@ -1,7 +1,7 @@
 import argparse
 
 from my_package.data_processing import input_data, filter_by_name, filter_by_declination
-from my_package.plotting import mollewide_plot
+from my_package.plotting import molleweide_plot
 from my_package.load_data import PULSAR_CSV_PATH
 
 
@@ -41,7 +41,7 @@ def main():
     df = filter_by_declination(df, args.dec_min, args.dec_max)
 
     print("Plotting the data")
-    mollewide_plot(df)
+    molleweide_plot(df)
 
 if __name__ == "__main__":
     main()
