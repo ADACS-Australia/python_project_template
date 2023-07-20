@@ -26,7 +26,7 @@ setup(
     # Minimum version of python required
     python_requires='>=3.6',
     # Name of your package, should be the same as the name of the directory
-    packages=['my_package'],
+    packages=['my_package', 'my_package.scripts'],
     # Any data files that need to be included with the package (non python files)
     package_data={'my_package':['data/*.csv']},
     # Dependencies for the package
